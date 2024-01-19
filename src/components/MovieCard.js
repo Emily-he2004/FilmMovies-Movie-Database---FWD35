@@ -1,3 +1,4 @@
+import FavouriteButton from "./FavouriteButton";
 
 
 const defaultMovieData = {
@@ -5,7 +6,7 @@ const defaultMovieData = {
 }
 
 
-function MovieCard({movieData = defailtMovieData}) {
+function MovieCard({movieData = defaultMovieData}) {
     const imagePath = `${IMAGE_URL_BASE}/w185${movieData.backdrop.path}`;
     console.log(imagePath);
 
@@ -17,9 +18,10 @@ function MovieCard({movieData = defailtMovieData}) {
                 <h3 className="release-date">{movieData.formatReleaseDate}</h3>
             </div>
             <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
-            <button className="favourite">&#9829;</button>
+            <FavouriteButton />
+            {/* <button className="favourite">&#9829;</button> */}
         </div>
     )
 }
 
-export default { defaultMovieData, MovieCard };
+export default { MovieCard };
