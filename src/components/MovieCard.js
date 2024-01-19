@@ -14,10 +14,12 @@ function MovieCard({movieData = defailtMovieData}) {
             <img src={imagePath} alt={movieData.title} className="movie-card-image" />
             <div className="title-and-release">
                 <h2 className="title">{movieData.title}</h2>
-                <h3 className="release-date">{movieData.release_date}</h3>
+                <h3 className="release-date">{movieData.formatReleaseDate}</h3>
             </div>
             <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
             <button className="favourite">&#9829;</button>
         </div>
     )
 }
+
+export default { defaultMovieData, MovieCard };

@@ -1,3 +1,6 @@
 
 
 
+function MoviesContainer({title, moviesData}){
+
+}
