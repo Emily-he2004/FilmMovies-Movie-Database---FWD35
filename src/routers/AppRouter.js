@@ -10,7 +10,7 @@ function AppRouter(){
     return (
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={PageHome} />
+            <Route path="/" element={<PageHome />} />
         </Routes>
         </BrowserRouter>
     )
