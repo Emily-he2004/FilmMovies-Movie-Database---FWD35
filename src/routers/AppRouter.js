@@ -1,4 +1,5 @@
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PageHome from "../pages/PageHome";
 
 
 
@@ -8,12 +9,11 @@ function AppRouter(){
 
     return (
         <BrowserRouter>
-        <AppProvider>
-            
-        </AppProvider>
+        <Routes>
+            <Route path="/" element={PageHome} />
+        </Routes>
         </BrowserRouter>
-        // <div className="">
-
-        // </div>
     )
 }
+
+export default AppRouter;

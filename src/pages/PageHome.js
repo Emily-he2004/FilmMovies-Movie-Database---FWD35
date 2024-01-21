@@ -19,6 +19,7 @@ function PageHome(){
 
     return(
         <main id="home">
+            <h2>Home test</h2>
             <MoviesContainer title="Popular Movies" moviesData />
         </main>
     );
