@@ -1,28 +1,28 @@
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+// import { useContext } from "react";
+// import { GlobalContext } from "../context/GlobalContext";
 
 
-function FavouriteButton({movieData}){
+// function FavouriteButton({movieData}){
 
-    const {favourites, addToFavourites, removeFavourites} = useContext(GlobalContext);
+//     const {favourites, addToFavourites, removeFavourites} = useContext(GlobalContext);
 
-    const isFavourited = favourites.find((fav) => {
-        return fav.id === movieData.id;
-    });
+//     const isFavourited = favourites.find((fav) => {
+//         return fav.id === movieData.id;
+//     });
 
 
-    function handleFavourite(event) {
-        event.stopPropagation;
-        if (isFavourited){
-            removeFavourites(movieData);
-        } else {
-            addToFavourites(movieData);
-        }
-    }
+//     function handleFavourite(event) {
+//         event.stopPropagation;
+//         if (isFavourited){
+//             removeFavourites(movieData);
+//         } else {
+//             addToFavourites(movieData);
+//         }
+//     }
 
-    return(
-        <button onClick={handleFavourite} className={`favourite ${isFavourited ? "favourited" : ""}`}>&#9829;</button>
-    )
-}
+//     return(
+//         <button onClick={handleFavourite} className={`favourite ${isFavourited ? "favourited" : ""}`}>&#9829;</button>
+//     )
+// }
 
-export default FavouriteButton;
+// export default FavouriteButton;

@@ -1,3 +1,5 @@
+import MovieCard from "../components/MovieCard";
+
 function WorkShop(){
     return(
         <div>
