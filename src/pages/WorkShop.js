@@ -15,24 +15,24 @@ export default WorkShop;
 // import { Route, Router, Routes } from "react-router-dom";
 
 // return (
-//     <div>
+//     <BrowserRouter>
 //         <Router>
 //             <Header />
 //                 <Routes>
 //                     <Route path="/" element={<HomePage />} />
-//                     <Route path="/" element={<AboutPage />} />
-//                     <Route path="/" element={<FavouritePage />} />
-//                     <Route path="/" element={<SingleMoviePage />} />
+//                     <Route path="/about" element={<AboutPage />} />
+//                     <Route path="/favourites" element={<FavouritePage />} />
+//                     <Route path="/movie/:id" element={<SingleMoviePage />} />
 
 // How do we load the search results? in a
 // new page upon search submit (onClick)?
 
-//                     <Route path="/" element={<SearchResultPage />} />
+//                     <Route path="/search-results" element={<SearchResultPage />} />
 
 //                 </Routes>
 //             <Footer />
 //         </Router>
-//     </div>
+//     </BrowserRouter>
 // )
 
 // Plan for Header.js:

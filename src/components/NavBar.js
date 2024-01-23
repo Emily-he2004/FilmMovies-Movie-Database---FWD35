@@ -1,6 +1,7 @@
+import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function NavBar() {
   return (
     <div>
       <div>
@@ -15,7 +16,12 @@ function Footer() {
           <img className="mini-logo" src="./media/movie_mini_logo.svg" />
         </Link>
       </div>
+      {/* Does the button need it's own <div> or
+                Can it go inside menu list's <div>? */}
       <div>
+        <button>
+          <img button image goes here />
+        </button>
         <ul>
           <li>
             <Link to="/about">About</Link>
@@ -25,8 +31,10 @@ function Footer() {
           </li>
         </ul>
       </div>
+      {/* Search bar must go inside <Header /> */}
+      <SearchBar />
     </div>
   );
 }
 
-export default Footer;
+export default NavBar;

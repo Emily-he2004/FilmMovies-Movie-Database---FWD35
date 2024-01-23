@@ -1,4 +1,7 @@
 import FavouriteButton from "./FavouriteButton";
+import { API_ENDPOINT } from "../utilities/api";
+
+const IMAGE_URL_BASE = `${API_ENDPOINT}/movie/poster_path/image`;
 
 const defaultMovieData = {
   adult: false,

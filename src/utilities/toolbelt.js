@@ -16,7 +16,7 @@ function formatReleaseDate(date) {
     return dateObject.toLocaleDateString("en-US", options);
 }
 
-function filterVideos(){
+function filterVideos(videoDataArray){
     // site: "Youtube"
     // type: "Trailer"
     return videoDataArray.filter((videoData) => {
