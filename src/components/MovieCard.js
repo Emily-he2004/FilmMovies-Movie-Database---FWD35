@@ -1,7 +1,8 @@
 import FavouriteButton from "./FavouriteButton";
-import { API_ENDPOINT } from "../utilities/api";
-
-const IMAGE_URL_BASE = `${API_ENDPOINT}/movie/poster_path/image`;
+import { IMAGE_URL_BASE } from "../utilities/api";
+import { useNavigate } from "react-router-dom";
+import { formatReleaseDate } from "../utilities/toolbelt";
+import { GlobalProvider } from "../context/GlobalContext";
 
 const defaultMovieData = {
   adult: false,
@@ -40,23 +41,36 @@ const defaultMovieData = {
 //   vote_count: integer, // 1067,
 // };
 
-
 function MovieCard({ movieData = defaultMovieData }) {
-  const imagePath = `${IMAGE_URL_BASE}/w185${movieData.backdrop.path}`;
+  const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
   console.log(imagePath);
+  const navigate = useNavigate();
 
   return (
-    <div className="movie-card">
-      <img src={imagePath} alt={movieData.title} className="movie-card-image" />
-      <div className="title-and-release">
-        <h2 className="title">{movieData.title}</h2>
-        <h3 className="release-date">{movieData.formatReleaseDate}</h3>
+    <GlobalProvider>
+      <div
+        className="movie-card"
+        onClick={() => {
+          navigate(`/movie/${movieData.id}`);
+        }}
+      >
+        <img
+          src={imagePath}
+          alt={movieData.title}
+          className="movie-card-image"
+        />
+        <div className="title-and-release">
+          <h3 className="title">{movieData.title}</h3>
+          <h4 className="release-date">
+            {formatReleaseDate(movieData.release_date)}
+          </h4>
+        </div>
+        <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
+        <FavouriteButton movieData={movieData} />
+        {/* <button className="favourite">&#9829;</button> */}
       </div>
-      <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
-      <FavouriteButton />
-      <button className="favourite">&#9829;</button>
-    </div>
+    </GlobalProvider>
   );
 }
 
-export default { MovieCard };
+export default MovieCard;

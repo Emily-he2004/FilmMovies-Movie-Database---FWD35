@@ -14,23 +14,21 @@ function HomePage() {
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
 
-  const [filter, setFilter] = useState("Popular");
+  const [filter, setFilter] = useState("popular");
 
   useEffect(() => {
-    getPopularMovies()
+
+  }, []);
+
+  useEffect(() => {
+    if (filter === "popular") {
+      getPopularMovies()
       .then((data) => {
         setPopularMovies(data.results);
       })
       .catch((error) => {
         alert(error);
       });
-  }, []);
-
-  useEffect(() => {
-    if (filter === "popular") {
-      setTopRatedMovies([]);
-      setNowPlayingMovies([]);
-      setUpcomingMovies([]);
     } else if (filter === "top-rated") {
       getTopRatedMovies()
         .then((data) => {
@@ -39,9 +37,9 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      setPopularMovies([]);
-      setNowPlayingMovies([]);
-      setUpcomingMovies([]);
+      // setPopularMovies([]);
+      // setNowPlayingMovies([]);
+      // setUpcomingMovies([]);
     } else if (filter === "now_playing") {
       getNowPlayingMovies()
         .then((data) => {
@@ -50,9 +48,9 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      setPopularMovies([]);
-      setTopRatedMovies([]);
-      setUpcomingMovies([]);
+      // setPopularMovies([]);
+      // setTopRatedMovies([]);
+      // setUpcomingMovies([]);
     } else if (filter === "upcoming") {
       getUpcomingMovies()
         .then((data) => {
@@ -61,9 +59,9 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      setPopularMovies([]);
-      setTopRatedMovies([]);
-      setNowPlayingMovies([]);
+      // setPopularMovies([]);
+      // setTopRatedMovies([]);
+      // setNowPlayingMovies([]);
     }
 
   }, [filter]);

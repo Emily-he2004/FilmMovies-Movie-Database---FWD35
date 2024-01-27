@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { GlobalProvider } from "../context/GlobalContext";
 // ---------------------- //
 import Header from "../components/Header";
 // ---------------------- //
@@ -18,7 +19,7 @@ import Footer from "../components/Footer";
 function AppRouter() {
   return (
     <BrowserRouter>
-      <Router>
+      <GlobalProvider>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -33,7 +34,7 @@ function AppRouter() {
           <Route path="/workshop" element={<WorkShop />} />
         </Routes>
         <Footer />
-      </Router>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }
