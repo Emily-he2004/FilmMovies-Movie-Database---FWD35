@@ -5,7 +5,11 @@ function Header() {
   return (
     <div>
       <NavBar />
-      <SearchBar />
+      <SearchBar
+        // searchMovie={searchMovie}
+        // setSearchMovie={setSearchMovie}
+        // fetchMovieData={fetchMovieData}
+      />
     </div>
   );
 }

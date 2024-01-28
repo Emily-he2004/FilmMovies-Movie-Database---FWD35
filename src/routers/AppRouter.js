@@ -15,12 +15,17 @@ import PageNotFound from "../pages/PageNotFound";
 import WorkShop from "../pages/WorkShop";
 // ---------------------- //
 import Footer from "../components/Footer";
+import SearchBar from "../components/SearchBar";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <GlobalProvider>
         <Header />
+        {/* <SearchResultPage
+        // allMovieData={allMovieData}
+        // loading={loading}
+        /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -28,7 +33,8 @@ function AppRouter() {
 
           <Route path="/movie/:id" element={<SingleMoviePage />} />
 
-          <Route path="/search-results" element={<SearchResultPage />} />
+          {/* <SearchBar /> */}
+          {/* <Route path="/search-results" element={<SearchResultPage />} /> */}
           <Route path="/page-not-found" element={<PageNotFound />} />
 
           <Route path="/workshop" element={<WorkShop />} />

@@ -4,7 +4,6 @@ import MovieCard from "../components/MovieCard";
 
 function FavouritesPage() {
   const { favourites } = useContext(GlobalContext);
-
   return (
     <div>
       <h2>This is the Favourites Page.</h2>

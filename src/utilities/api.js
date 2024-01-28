@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
 console.log(API_TOKEN);
 
@@ -94,4 +96,27 @@ function getMovieById(movieId) {
     });
 }
 
-export { getPopularMovies, getTopRatedMovies, getNowPlayingMovies, getUpcomingMovies, IMAGE_URL_BASE, getMovieById };
+// const getMovieRequest = async () => {
+//   // return fetch(`${API_ENDPOINT}/search/movie?include_adult=false&language=en-CA&query=${search_input}`, {
+//   // // return fetch(`${API_ENDPOINT}/search?include_adult=false&language=en-CA&query=${search_input}`, {
+//   //   // https://www.themoviedb.org/search?language=en-CA&query=test
+//   //   headers: {
+//   //     accept: "application/json",
+//   //     Authorization: `Bearer ${API_TOKEN}`,
+//   //   },
+
+//     const searchURL = `${API_ENDPOINT}/search?${searchMovie}&language=en-CA`;
+//     const response = await fetch(searchURL);
+//     const responseJson = await response.json();
+
+//   }
+
+
+export {
+  getPopularMovies,
+  getTopRatedMovies,
+  getNowPlayingMovies,
+  getUpcomingMovies,
+  IMAGE_URL_BASE,
+  getMovieById,
+};
