@@ -2,17 +2,17 @@ import { GlobalContext } from "../context/GlobalContext";
 import { useContext } from "react";
 
 function FavouriteButton({ movieData }) {
-  const { favourites, addToFavourites, removeFavourites } =
+  const { favourites, addToFavourites, removeFromFavourites } =
     useContext(GlobalContext);
 
-  const isFavourited = favourites && favourites.find((fav) => {
+  const isFavourited = favourites.find((fav) => {
     return fav.id === movieData.id;
   });
 
   function handleFavourite(event) {
     event.stopPropagation();
     if (isFavourited) {
-      removeFavourites(movieData);
+      removeFromFavourites(movieData);
     } else {
       addToFavourites(movieData);
     }
@@ -23,7 +23,7 @@ function FavouriteButton({ movieData }) {
       onClick={handleFavourite}
       className={`favourite ${isFavourited ? "favourited" : ""}`}
     >
-      &#9829;
+      &#10084; red
     </button>
   );
 }

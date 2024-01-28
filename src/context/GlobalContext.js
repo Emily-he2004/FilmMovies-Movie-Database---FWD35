@@ -30,9 +30,9 @@ export function GlobalProvider({ children }) {
   return (
     <GlobalContext.Provider
       value={{
-        favorites: favourites,
-        addToFavorites: addToFavourites,
-        removeFromFavorites: removeFromFavourites,
+        favourites: favourites,
+        addToFavourites: addToFavourites,
+        removeFromFavourites: removeFromFavourites,
       }}
     >
       {children}

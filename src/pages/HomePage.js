@@ -17,10 +17,6 @@ function HomePage() {
   const [filter, setFilter] = useState("popular");
 
   useEffect(() => {
-
-  }, []);
-
-  useEffect(() => {
     if (filter === "popular") {
       getPopularMovies()
       .then((data) => {
@@ -29,7 +25,7 @@ function HomePage() {
       .catch((error) => {
         alert(error);
       });
-    } else if (filter === "top-rated") {
+    } else if (filter === "top_rated") {
       getTopRatedMovies()
         .then((data) => {
           setTopRatedMovies(data.results);
@@ -37,9 +33,6 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      // setPopularMovies([]);
-      // setNowPlayingMovies([]);
-      // setUpcomingMovies([]);
     } else if (filter === "now_playing") {
       getNowPlayingMovies()
         .then((data) => {
@@ -48,9 +41,6 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      // setPopularMovies([]);
-      // setTopRatedMovies([]);
-      // setUpcomingMovies([]);
     } else if (filter === "upcoming") {
       getUpcomingMovies()
         .then((data) => {
@@ -59,37 +49,10 @@ function HomePage() {
         .catch((error) => {
           alert(error);
         });
-      // setPopularMovies([]);
-      // setTopRatedMovies([]);
-      // setNowPlayingMovies([]);
     }
 
   }, [filter]);
 
-  // useEffect(() => {
-  //   let filteredMovies = [];
-
-  //   switch (filter) {
-  //     case "popular":
-  //       filteredMovies = popularMovies;
-  //       break;
-  //     case "top_rated":
-  //       filteredMovies = topRatedMovies;
-  //       break;
-  //     case "now_playing":
-  //       filteredMovies = nowPlayingMovies;
-  //       break;
-  //     case "upcoming":
-  //       filteredMovies = upcomingMovies;
-  //       break;
-  //     default:
-  //       filteredMovies = popularMovies;
-  //   }
-
-  //   setFilteredMovies(filteredMovies);
-  // }, [filter]);
-
-  // console.log(popularMovies);
 
   return (
     <main className="home-page" id="home-page">

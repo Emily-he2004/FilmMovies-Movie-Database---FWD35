@@ -76,6 +76,7 @@ function SingleMoviePage() {
             <p>{movieData.overview}</p>
 
             <div className="movie-trailers">
+                <h2>Video supposed to be here but it's not</h2>
               {movieVideos.length > 0 && (
                 <iframe
                 src={`https://www.youtube.com/embed/${movieVideos[0].key}`}

@@ -1,4 +1,3 @@
-import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -32,7 +31,6 @@ function NavBar() {
         </ul>
       </div>
       {/* Search bar must go inside <Header /> */}
-      <SearchBar />
     </div>
   );
 }
