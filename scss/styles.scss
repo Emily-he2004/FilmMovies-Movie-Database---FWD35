@@ -1,0 +1,17 @@
+//Main Styles (Master Stylesheet)
+//This file imports SCSS partial files 
+
+
+//Resets and Defaults
+@use 'reset';
+@use 'typography';
+
+//HTML Sections
+@use 'body';
+@use 'header';
+@use 'footer';
+
+
+//NOTE: Always include in terminal at start of opening prject folder:
+// sass --watch scss:styles 
+// otherwise the css styles will NOT show.
