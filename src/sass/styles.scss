@@ -4,13 +4,14 @@
 
 //Resets and Defaults
 @use 'reset';
-@use 'typography';
+
 
 //HTML Sections
 @use 'about';
+@use 'favourite';
 @use 'home';
-@use 'favourites';
 @use 'single';
+
 @use 'header';
 @use 'footer';
 
@@ -18,3 +19,8 @@
 //NOTE: Always include in terminal at start of opening prject folder:
 // sass --watch scss:styles 
 // otherwise the css styles will NOT show.
+
+//tester
+.home-page {
+    background-color: rgb(140, 0, 255);
+}
