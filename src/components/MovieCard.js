@@ -42,7 +42,7 @@ const defaultMovieData = {
 //   vote_count: integer, // 1067,
 // };
 
-function MovieCard({ movieData = defaultMovieData, }) {
+function MovieCard({ movieData = defaultMovieData }) {
   const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
   console.log(imagePath);
   const navigate = useNavigate();
@@ -68,7 +68,6 @@ function MovieCard({ movieData = defaultMovieData, }) {
         </div>
         <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
         <FavouriteButton movieData={movieData} />
-         <button className="favourite">&#9829;</button> 
       </div>
     </GlobalProvider>
   );
