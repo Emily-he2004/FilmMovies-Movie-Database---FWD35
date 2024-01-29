@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-
+import "../sass/_footer.scss";
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       <div>
         <Link to="/">
           <img
@@ -15,7 +15,7 @@ function Footer() {
           <img className="mini-logo" src="./media/movie_mini_logo.svg" />
         </Link>
       </div>
-      <div>
+      <div className="footer-links">
         <ul>
           <li>
             <Link to="/about">About</Link>

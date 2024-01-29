@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieById } from "../utilities/api";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavouriteButton";
-
+import "../sass/_single.scss";
 // const singleMovieData = {
 //   adult: false,
 //   backdrop_path: "/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg",

@@ -4,6 +4,7 @@
 
 header {
     background-color: #161616;
+    border-bottom: 0.10rem solid $text-color-yellow; 
 
     .header-container {
         display: flex;

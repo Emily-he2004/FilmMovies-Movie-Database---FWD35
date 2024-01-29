@@ -3,6 +3,7 @@ import { IMAGE_URL_BASE } from "../utilities/api";
 import { useNavigate } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
 import { GlobalProvider } from "../context/GlobalContext";
+import "../sass/_home.scss";
 
 const defaultMovieData = {
   adult: false,
@@ -67,7 +68,7 @@ function MovieCard({ movieData = defaultMovieData, }) {
         </div>
         <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
         <FavouriteButton movieData={movieData} />
-        {/* <button className="favourite">&#9829;</button> */}
+         <button className="favourite">&#9829;</button> 
       </div>
     </GlobalProvider>
   );

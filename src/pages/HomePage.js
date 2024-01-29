@@ -1,3 +1,5 @@
+import "../sass/_home.scss";
+
 import { useEffect, useState } from "react";
 import {
   getPopularMovies,
@@ -56,7 +58,7 @@ function HomePage() {
 
   return (
     <main className="home-page" id="home-page">
-      <h2>This is the Home Page.</h2>
+      {/*<h2>This is the Home Page.</h2>*/}
       <MovieFilter filter={filter} setFilter={setFilter}/>
       {filter === "popular" && (
         <MoviesContainer title="Popular Movies" moviesData={popularMovies} />

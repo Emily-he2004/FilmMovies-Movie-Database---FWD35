@@ -1,3 +1,76 @@
-//Partial File: Home Page
+//Partial File: Home Page 
+//styling for: HomePage, MovieCard, & MovieContainer
 
+//---------------------------------------------------//
+//HomePage.js styles
 @use 'variables' as *;
+
+.home-page {
+    background-color: $body-color;
+   
+    ul{
+        list-style-type: none;
+    }
+
+
+    h2{
+        color: $text-color-light;
+        text-align: center;
+    }
+
+}
+
+// display flex isn't working 
+.movieCategories {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.filterBtn {
+    background-color: $body-color;
+    border-color: $text-color-yellow;
+    color: $text-color-light;
+    padding: 0.20rem;
+    border-radius: 0.35rem;
+    font-size: 1rem;
+}
+
+//----------------------------------------------------//
+// MovieCard.js styles
+.title {
+    font-size: 1rem;
+}
+
+.release-date {
+    font-size: 0.75rem;
+}
+
+.movie-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-and-release,
+.vot-average {
+    color: $text-color-light;
+}
+
+.favourite {
+    color: red;
+}
+
+@media (min-width: 600px) {
+    .title {
+        font-size: 1.50rem;
+    }
+    
+    .release-date {
+        font-size: 1rem;
+    }
+
+}
+//----------------------------------------------------//
+//MovieContainer.js

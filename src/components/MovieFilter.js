@@ -2,19 +2,19 @@
 
 function MovieFilter({ filter, setFilter }) {
   return (
-    <div>
+    <div className="movieCategories">
       <ul>
         <li>
-          <button onClick={() => setFilter("popular")}>Popular</button>
+          <button className="filterBtn" onClick={() => setFilter("popular")}>Popular</button>
         </li>
         <li>
-          <button onClick={() => setFilter("top_rated")}>Top-Rated</button>
+          <button className="filterBtn" onClick={() => setFilter("top_rated")}>Top-Rated</button>
         </li>
         <li>
-          <button onClick={() => setFilter("now_playing")}>Now Playing</button>
+          <button className="filterBtn" onClick={() => setFilter("now_playing")}>Now Playing</button>
         </li>
         <li>
-          <button onClick={() => setFilter("upcoming")}>Upcoming</button>
+          <button className="filterBtn" onClick={() => setFilter("upcoming")}>Upcoming</button>
         </li>
       </ul>
     </div>
