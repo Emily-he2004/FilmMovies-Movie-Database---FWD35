@@ -6,7 +6,7 @@
 @use 'variables' as *;
 
 // we need a new file for universal styles
-body{
+body {
     background-color: $body-color;
 }
 
@@ -16,13 +16,13 @@ body{
 .home-page {
     // don't need this any more due to body being grey
     // background-color: $body-color;
-   
-    ul{
+
+    ul {
         list-style-type: none;
     }
 
 
-    h2{
+    h2 {
         color: $text-color-light;
         text-align: center;
     }
@@ -31,7 +31,7 @@ body{
 
 // display flex isn't working 
 // grabbed the wrong class and the wrong file. where did movieCategories come from?
-.movie-cards{
+.movie-cards {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -40,13 +40,69 @@ body{
     padding: .5rem;
 }
 
+.movieCategories ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 20px 130px 130px 20px;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    justify-content: center;
+
+    .filter-popular,
+    .filter-now-playing {
+        grid-column: 2/3;
+    }
+
+    .filter-top-rated,
+    .filter-upcoming {
+        grid-column: 3/4;
+    }
+}
+
 .filterBtn {
-    background-color: $body-color;
+    width: 8.125rem;
+    height: 1.875rem;
     border-color: $text-color-yellow;
-    color: $text-color-light;
-    padding: 0.20rem;
-    border-radius: 0.35rem;
-    font-size: 1rem;
+    background-color: $body-color;
+    border-radius: .3125rem;
+}
+
+.filterBtn:hover,
+.filterBtn:active,
+.filterBtn:focus {
+    color: red;
+}
+
+@media (min-width: 37.5em) {
+    .movieCategories ul {
+        display: flex;
+    }
+}
+
+@media (min-width: 50em) {
+    .movieCategories ul {
+        gap: 0 1.0625rem;
+    }
+
+    .filterBtn {
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: .625rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 90em) {
+    .movieCategories ul {
+        gap: 0 1.5625rem;
+    }
+
+    .filterBtn {
+        width: 12.5rem;
+        height: 3.125rem;
+        border-radius: .9375rem;
+        font-size: 1.5625rem;
+    }
 }
 
 //----------------------------------------------------//
@@ -82,11 +138,12 @@ body{
     .title {
         font-size: 1.50rem;
     }
-    
+
     .release-date {
         font-size: 1rem;
     }
 
 }
+
 //----------------------------------------------------//
 //MovieContainer.js
