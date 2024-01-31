@@ -8,6 +8,8 @@
 // we need a new file for universal styles
 body {
     background-color: $body-color;
+    color: $text-color-light;
+
 }
 
 
@@ -65,6 +67,7 @@ body {
     border-color: $text-color-yellow;
     background-color: $body-color;
     border-radius: .3125rem;
+    color: $text-color-light;
 }
 
 .filterBtn:hover,

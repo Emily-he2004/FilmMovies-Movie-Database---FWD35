@@ -70,7 +70,7 @@ function SingleMoviePage() {
         <>
           <h1>{movieData.title}</h1>
           <div>
-            <h2>{formatReleaseDate(movieData.release_date)}</h2>
+            <h3>{formatReleaseDate(movieData.release_date)}</h3>
             <FavouriteButton movieData={movieData} />
 
             <p>{movieData.overview}</p>
