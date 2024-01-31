@@ -42,33 +42,45 @@ const defaultMovieData = {
 //   vote_count: integer, // 1067,
 // };
 
+function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength) + '...';
+  } else {
+    return text;
+  }
+}
+
 function MovieCard({ movieData = defaultMovieData }) {
-  const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
+  const imagePath = `${IMAGE_URL_BASE}/w500${movieData.poster_path}`;
   console.log(imagePath);
+  console.log(movieData);
   const navigate = useNavigate();
 
   return (
     <GlobalProvider>
-      <div
-        className="movie-card"
-        onClick={() => {
-          navigate(`/movie/${movieData.id}`);
-        }}
-      >
+      <article className="movie-card">
         <img
           src={imagePath}
           alt={movieData.title}
           className="movie-card-image"
         />
-        <div className="title-and-release">
-          <h3 className="title">{movieData.title}</h3>
-          <h4 className="release-date">
-            {formatReleaseDate(movieData.release_date)}
-          </h4>
+        <div className="movie-hidden-info">
+          <div>
+            <p className="vote-average">{(movieData.vote_average * 10).toFixed()}%</p>
+            <FavouriteButton movieData={movieData} />
+          </div>
+          <p>{truncateText(movieData.overview, 150)}</p>
+          <button onClick={() => {
+            navigate(`/movie/${movieData.id}`);
+          }}>More Info</button>
         </div>
-        <h4 className="vot-average">{movieData.vote_average.toFixed(1)}</h4>
-        <FavouriteButton movieData={movieData} />
-      </div>
+        <div className="title-and-release">
+          <p className="release-date">
+            {formatReleaseDate(movieData.release_date)}
+          </p>
+          <h3 className="title">{truncateText(movieData.title, 20)}</h3>
+        </div>
+      </article>
     </GlobalProvider>
   );
 }
