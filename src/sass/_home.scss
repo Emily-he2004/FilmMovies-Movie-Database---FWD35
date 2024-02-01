@@ -197,6 +197,11 @@ body {
     button.favourite.favourited {
         color: red;
     }
+
+    .more-info:hover {
+        color: red;
+        cursor: pointer;
+    }
 }
 
 
