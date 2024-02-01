@@ -1,7 +1,7 @@
 import FavouriteButton from "./FavouriteButton";
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { useNavigate } from "react-router-dom";
-import { formatReleaseDate } from "../utilities/toolbelt";
+import { formatReleaseDate, truncateText, convertToHoursAndMinutes } from "../utilities/toolbelt";
 import "../sass/_home.scss";
 import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
@@ -42,21 +42,6 @@ const defaultMovieData = {
 //   vote_average: Number, // 6.342,
 //   vote_count: integer, // 1067,
 // };
-
-function truncateText(text, maxLength) {
-  if (text.length > maxLength) {
-    return text.substring(0, maxLength) + "...";
-  } else {
-    return text;
-  }
-}
-
-// converts runtime to Hr and Min
-function convertToHoursAndMinutes(runtime) {
-  const hours = Math.floor(runtime / 60);
-  const minutes = runtime % 60;
-  return `${hours}Hr ${minutes}Min`;
-}
 
 function MovieCard({ movieData = defaultMovieData }) {
   const imagePath = `${IMAGE_URL_BASE}/w500${movieData.poster_path}`;

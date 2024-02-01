@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 
 const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
-const key = process.env.KEY
-console.log(API_TOKEN);
-
 const API_ENDPOINT = "https://api.themoviedb.org/3";
 const IMAGE_URL_BASE = "https://image.tmdb.org/t/p";
 
@@ -97,6 +94,56 @@ function getMovieById(movieId) {
     });
 }
 
+function getMovieCredits(movieId) {
+  return fetch(`${API_ENDPOINT}/movie/${movieId}/credits`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return {
+        director: findDirector(data.crew),
+        cast: data.cast,
+      };
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
+function findDirector(crew) {
+  const director = crew.find((member) => member.job === "Director");
+  return director ? director.name : "Director not found";
+}
+
+function getTopCast(movieId) {
+  return fetch(`${API_ENDPOINT}/movie/${movieId}/credits`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data.cast.slice(0, 3);
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
 // const getMovieRequest = async () => {
 //   // return fetch(`${API_ENDPOINT}/search/movie?include_adult=false&language=en-CA&query=${search_input}`, {
 //   // // return fetch(`${API_ENDPOINT}/search?include_adult=false&language=en-CA&query=${search_input}`, {
@@ -120,4 +167,6 @@ export {
   getUpcomingMovies,
   IMAGE_URL_BASE,
   getMovieById,
+  getMovieCredits,
+  getTopCast
 };

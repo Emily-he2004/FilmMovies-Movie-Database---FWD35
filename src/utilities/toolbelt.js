@@ -24,5 +24,19 @@ function filterVideos(videoDataArray) {
     })
 }
 
+function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+        return text.substring(0, maxLength) + "...";
+    } else {
+        return text;
+    }
+}
 
-export { formatReleaseDate, filterVideos };
+function convertToHoursAndMinutes(runtime) {
+    const hours = Math.floor(runtime / 60);
+    const minutes = runtime % 60;
+    return `${hours}Hr ${minutes}Min`;
+}
+
+
+export { formatReleaseDate, filterVideos, truncateText, convertToHoursAndMinutes };

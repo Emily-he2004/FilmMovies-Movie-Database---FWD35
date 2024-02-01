@@ -13,7 +13,7 @@ mark {
     min-height: 100vh;
     margin: auto 2rem;
     padding-top: 1rem;
-    
+
     p {
         color: $text-color-light;
         //text-align: center;
@@ -31,22 +31,23 @@ mark {
         margin: 1rem auto;
         max-width: 45%;
         max-height: 450%;
-        
+
     }
 
     .about {
         padding-top: 2rem;
     }
 
-    p{
-        font-size: 1.20rem;
-         max-width: 80%;
-        //text-align: center;
-        margin: 1.5rem auto
-    }
 
-    .about-content{
-        margin-left: 60rem;
-        margin-right: 60rem;
+    .about-content {
+
+        // margin-left: 60rem;
+        // margin-right: 60rem;
+        p {
+            font-size: 1.20rem;
+            max-width: 80%;
+            //text-align: center;
+            margin: 1.5rem auto
+        }
     }
 }
