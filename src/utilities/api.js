@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
+const key = process.env.KEY
 console.log(API_TOKEN);
 
 const API_ENDPOINT = "https://api.themoviedb.org/3";

@@ -27,7 +27,9 @@ function HomePage() {
       .catch((error) => {
         alert(error);
       });
-    } else if (filter === "top_rated") {
+    } 
+    
+    else if (filter === "top_rated") {
       getTopRatedMovies()
         .then((data) => {
           setTopRatedMovies(data.results);
