@@ -2,9 +2,8 @@ import FavouriteButton from "./FavouriteButton";
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { useNavigate } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
-import { GlobalProvider } from "../context/GlobalContext";
 import "../sass/_home.scss";
-import { getMovieById } from '../utilities/api';
+import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
 
 const defaultMovieData = {
@@ -46,7 +45,7 @@ const defaultMovieData = {
 
 function truncateText(text, maxLength) {
   if (text.length > maxLength) {
-    return text.substring(0, maxLength) + '...';
+    return text.substring(0, maxLength) + "...";
   } else {
     return text;
   }
@@ -72,43 +71,51 @@ function MovieCard({ movieData = defaultMovieData }) {
         setRuntime(data.runtime);
       })
       .catch((error) => {
-        console.error('Error fetching movie runtime:', error);
+        console.error("Error fetching movie runtime:", error);
       });
   }, [movieData.id]);
 
-
-
   return (
-    <GlobalProvider>
-      <article className="movie-card">
-        <div>
-          <img
-            src={imagePath}
-            alt={movieData.title}
-            className="movie-card-image"
-          />
-          <div className="movie-hidden-info">
-            <div>
-              <p className="vote-average">{(movieData.vote_average * 10).toFixed()}%</p>
-              <FavouriteButton movieData={movieData} />
-            </div>
-            <p>{truncateText(movieData.overview, 150)}</p>
-            <button onClick={() => {
-              navigate(`/movie/${movieData.id}`);
-            }} className="more-info">More Info</button>
+    <article className="movie-card">
+      <div>
+        <img
+          src={imagePath}
+          alt={movieData.title}
+          className="movie-card-image"
+        />
+        <div className="movie-hidden-info">
+          <div>
+            <p className="vote-average">
+              {(movieData.vote_average * 10).toFixed()}%
+            </p>
+            <FavouriteButton movieData={movieData} />
           </div>
+          <p>{truncateText(movieData.overview, 150)}</p>
+          <button
+            onClick={() => {
+              navigate(`/movie/${movieData.id}`);
+            }}
+            className="more-info"
+          >
+            More Info
+          </button>
         </div>
-        <div className="title-and-release">
-          <p className="release-date">
-            {formatReleaseDate(movieData.release_date)}
-          </p>
-          <p>{convertToHoursAndMinutes(runtime)}</p>
-        </div>
-        <h3 onClick={() => {
+      </div>
+      <div className="title-and-release">
+        <p className="release-date">
+          {formatReleaseDate(movieData.release_date)}
+        </p>
+        <p>{convertToHoursAndMinutes(runtime)}</p>
+      </div>
+      <h3
+        onClick={() => {
           navigate(`/movie/${movieData.id}`);
-        }} className="title">{truncateText(movieData.title, 20)}</h3>
-      </article>
-    </GlobalProvider>
+        }}
+        className="title"
+      >
+        {truncateText(movieData.title, 20)}
+      </h3>
+    </article>
   );
 }
 
