@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
 import { GlobalProvider } from "../context/GlobalContext";
 import "../sass/_home.scss";
+import { getMovieById } from '../utilities/api';
+import { useState, useEffect } from "react";
 
 const defaultMovieData = {
   adult: false,
@@ -50,11 +52,31 @@ function truncateText(text, maxLength) {
   }
 }
 
+// converts runtime to Hr and Min
+function convertToHoursAndMinutes(runtime) {
+  const hours = Math.floor(runtime / 60);
+  const minutes = runtime % 60;
+  return `${hours}Hr ${minutes}Min`;
+}
+
 function MovieCard({ movieData = defaultMovieData }) {
   const imagePath = `${IMAGE_URL_BASE}/w500${movieData.poster_path}`;
+  const [runtime, setRuntime] = useState(null);
   console.log(imagePath);
   console.log(movieData);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getMovieById(movieData.id)
+      .then((data) => {
+        setRuntime(data.runtime);
+      })
+      .catch((error) => {
+        console.error('Error fetching movie runtime:', error);
+      });
+  }, [movieData.id]);
+
+
 
   return (
     <GlobalProvider>
@@ -80,10 +102,11 @@ function MovieCard({ movieData = defaultMovieData }) {
           <p className="release-date">
             {formatReleaseDate(movieData.release_date)}
           </p>
-          <h3 onClick={() => {
-            navigate(`/movie/${movieData.id}`);
-          }} className="title">{truncateText(movieData.title, 20)}</h3>
+          <p>{convertToHoursAndMinutes(runtime)}</p>
         </div>
+        <h3 onClick={() => {
+          navigate(`/movie/${movieData.id}`);
+        }} className="title">{truncateText(movieData.title, 20)}</h3>
       </article>
     </GlobalProvider>
   );
