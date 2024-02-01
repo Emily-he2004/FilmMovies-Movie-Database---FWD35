@@ -59,26 +59,30 @@ function MovieCard({ movieData = defaultMovieData }) {
   return (
     <GlobalProvider>
       <article className="movie-card">
-        <img
-          src={imagePath}
-          alt={movieData.title}
-          className="movie-card-image"
-        />
-        <div className="movie-hidden-info">
-          <div>
-            <p className="vote-average">{(movieData.vote_average * 10).toFixed()}%</p>
-            <FavouriteButton movieData={movieData} />
+        <div>
+          <img
+            src={imagePath}
+            alt={movieData.title}
+            className="movie-card-image"
+          />
+          <div className="movie-hidden-info">
+            <div>
+              <p className="vote-average">{(movieData.vote_average * 10).toFixed()}%</p>
+              <FavouriteButton movieData={movieData} />
+            </div>
+            <p>{truncateText(movieData.overview, 150)}</p>
+            <button onClick={() => {
+              navigate(`/movie/${movieData.id}`);
+            }} className="more-info">More Info</button>
           </div>
-          <p>{truncateText(movieData.overview, 150)}</p>
-          <button onClick={() => {
-            navigate(`/movie/${movieData.id}`);
-          }}>More Info</button>
         </div>
         <div className="title-and-release">
           <p className="release-date">
             {formatReleaseDate(movieData.release_date)}
           </p>
-          <h3 className="title">{truncateText(movieData.title, 20)}</h3>
+          <h3 onClick={() => {
+            navigate(`/movie/${movieData.id}`);
+          }} className="title">{truncateText(movieData.title, 20)}</h3>
         </div>
       </article>
     </GlobalProvider>

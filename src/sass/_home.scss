@@ -31,15 +31,15 @@ body {
 
 }
 
-// display flex isn't working 
-// grabbed the wrong class and the wrong file. where did movieCategories come from?
+.movies-container {
+    margin: 0 1.25rem
+}
+
 .movie-cards {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    margin: 1rem;
-    padding: .5rem;
+    gap: 5.5rem 1.25rem;
 }
 
 .movieCategories ul {
@@ -115,33 +115,72 @@ body {
     color: red;
 }
 
-.movie-card img {
-    opacity: 0.1;
+.movie-card-image {
+    border-radius: 1.25rem;
 }
 
 .movie-card {
-    position: relative;
-    max-width: 21.5rem;
+    // position: relative;
+    max-width: 20rem;
+
+    div {
+        position: relative;
+    }
 }
 
+
+
 .movie-hidden-info {
-    position: absolute;
-    top: 0;
     display: none;
     flex-wrap: wrap;
     font-size: 1.25rem;
     justify-content: center;
-    padding: 0 1.875rem;
+    padding: 3rem 1.875rem;
+    border-radius: 1.25rem;
+    border: .125rem solid #FFCB6A;
 
     div {
         display: flex;
         align-items: center;
         gap: 0 6rem;
     }
+
+    .more-info {
+        font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+        background-color: $body-color;
+        border-color: #FFCB6A;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: .625rem;
+    }
+
+    p {
+        font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    }
+}
+
+.vote-average {
+    background-color: $body-color;
+    border: .125rem solid #FFCB6A;
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    padding: .5625rem .75rem;
+    border-radius: .625rem;
+    margin: 0;
+}
+
+.title-and-release {
+    .title {
+        cursor: pointer;
+        text-align: center;
+    }
 }
 
 .movie-card:hover .movie-hidden-info {
     display: flex;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 
