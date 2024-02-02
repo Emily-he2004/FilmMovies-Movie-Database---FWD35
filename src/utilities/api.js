@@ -97,6 +97,56 @@ function getMovieById(movieId) {
     });
 }
 
+function getMovieCredits(movieId) {
+  return fetch(`${API_ENDPOINT}/movie/${movieId}/credits`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return {
+        director: findDirector(data.crew),
+        cast: data.cast,
+      };
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
+function findDirector(crew) {
+  const director = crew.find((member) => member.job === "Director");
+  return director ? director.name : "Director not found";
+}
+
+function getTopCast(movieId) {
+  return fetch(`${API_ENDPOINT}/movie/${movieId}/credits`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data.cast.slice(0, 3);
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
 function getMovieRequest(userValue) {
   return fetch(`${API_ENDPOINT}/search/movie?query=${userValue}`, {
     headers: {
@@ -123,4 +173,6 @@ export {
   getUpcomingMovies,
   IMAGE_URL_BASE,
   getMovieById,
+  getMovieCredits,
+  getTopCast
 };
