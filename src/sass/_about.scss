@@ -29,24 +29,24 @@ mark {
     .popcorn-cinema {
         display: block;
         margin: 1rem auto;
-        max-width: 45%;
-        max-height: 450%;
+        width: 45%;
+        height: 50vh;
         
     }
 
     .about {
         padding-top: 2rem;
+
+        p{
+           text-align: center;
+            font-size: 1.70rem;
+             
+        }
+       
     }
 
-    p{
-        font-size: 1.20rem;
-         max-width: 80%;
-        //text-align: center;
-        margin: 1.5rem auto
+    .about-text {
+        margin-top: 4rem;
     }
 
-    .about-content{
-        margin-left: 60rem;
-        margin-right: 60rem;
-    }
 }

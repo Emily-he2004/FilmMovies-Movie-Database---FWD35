@@ -13,7 +13,8 @@ function Footer() {
         <ul>
           <li>
             {/*<Link to="/about">About</Link>*/}
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/"
+            target="_blank" rel="noopener noreferrer">
               <img src={facebook} 
                    alt="Facebook icon"/>
             </a>
@@ -54,3 +55,9 @@ function Footer() {
 }
 
 export default Footer;
+
+//Note: 
+/*   target="_blank : opens link to a new tab
+     noopener noreferrer : prevents possible cyber attacks caused from using links 
+
+*/
