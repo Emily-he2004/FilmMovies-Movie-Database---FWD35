@@ -7,10 +7,11 @@
 
 
 //HTML Sections
-@use 'about';
-@use 'favourite';
-@use 'home';
-@use 'single';
+@use 'aboutPage';
+@use 'favouritesPage';
+@use 'homePage';
+@use 'singlePage';
+@use 'searchResultPage';
 
 @use 'header';
 @use 'footer';

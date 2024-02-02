@@ -1,4 +1,4 @@
-import "../sass/_about.scss";
+import "../sass/_aboutPage.scss";
 import popcorn from "../media/popcorn.jpg";
 
 function AboutPage() {

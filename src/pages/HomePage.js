@@ -1,4 +1,4 @@
-import "../sass/_home.scss";
+import "../sass/_homePage.scss";
 
 import { useEffect, useState } from "react";
 import {

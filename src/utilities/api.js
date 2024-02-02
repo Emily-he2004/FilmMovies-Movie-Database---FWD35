@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
-const key = process.env.KEY
+const key = process.env.KEY;
 console.log(API_TOKEN);
 
 const API_ENDPOINT = "https://api.themoviedb.org/3";
@@ -97,23 +97,26 @@ function getMovieById(movieId) {
     });
 }
 
-// const getMovieRequest = async () => {
-//   // return fetch(`${API_ENDPOINT}/search/movie?include_adult=false&language=en-CA&query=${search_input}`, {
-//   // // return fetch(`${API_ENDPOINT}/search?include_adult=false&language=en-CA&query=${search_input}`, {
-//   //   // https://www.themoviedb.org/search?language=en-CA&query=test
-//   //   headers: {
-//   //     accept: "application/json",
-//   //     Authorization: `Bearer ${API_TOKEN}`,
-//   //   },
-
-//     const searchURL = `${API_ENDPOINT}/search?${searchMovie}&language=en-CA`;
-//     const response = await fetch(searchURL);
-//     const responseJson = await response.json();
-
-//   }
-
+function getMovieRequest(userValue) {
+  return fetch(`${API_ENDPOINT}/search/movie?query=${userValue}`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
 
 export {
+  getMovieRequest,
   getPopularMovies,
   getTopRatedMovies,
   getNowPlayingMovies,

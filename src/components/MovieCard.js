@@ -2,7 +2,7 @@ import FavouriteButton from "./FavouriteButton";
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { useNavigate } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
-import "../sass/_home.scss";
+import "../sass/_movieCard.scss";
 import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
 
@@ -77,7 +77,7 @@ function MovieCard({ movieData = defaultMovieData }) {
 
   return (
     <article className="movie-card">
-      <div>
+      <div className="movie-hover">
         <img
           src={imagePath}
           alt={movieData.title}

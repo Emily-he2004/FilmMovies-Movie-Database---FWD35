@@ -17,14 +17,12 @@ function Header() {
         </Link>
         <button onClick={() => { setShowNav(!showNav) }} className="hamburger">☰</button>
       </div>
-      <NavBar />
-      {/* <SearchBar
+      <SearchBar
       // searchMovie={searchMovie}
       // setSearchMovie={setSearchMovie}
       // fetchMovieData={fetchMovieData}
-      /> */}
-
-      {/* Commented out SearchBar for the time being */}
+      />
+      <NavBar />
     </header>
   );
 }
