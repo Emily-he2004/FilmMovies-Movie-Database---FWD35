@@ -2,20 +2,124 @@
 
 @use 'variables' as *;
 
+// .single-movie-page {
+//     background-color: $body-color;
+//     min-height: 100vh;
+//     margin-top: 0;
+//     padding-top: 1rem;
+
+//     p,
+//     h2{
+//         color: $text-color-light;
+//     }
+
+
+// }
+
+// .title {
+//     color: $text-color-light;
+// }
+
 .single-movie-page {
-    background-color: $body-color;
-    min-height: 100vh;
-    margin-top: 0;
-    padding-top: 1rem;
-    
-    p,
-    h2{
-        color: $text-color-light;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .single-info-1 {
+        max-width: 24.5rem;
+        margin: 0 1.25rem;
+
+        iframe {
+            width: 100%;
+            height: auto;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .single-poster {
+            border-radius: 1.25rem;
+        }
+
+        .single-rating-fav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .9375rem;
+
+            p {
+                border: .125rem solid #FFCB6A;
+                padding: .625rem;
+                font-size: clamp(1.25rem, 2vw, 2.5rem);
+                border-radius: .625rem;
+                margin: 0;
+            }
+
+            button.favourite {
+                background: none;
+                border: none;
+                font-size: 3rem;
+                color: white;
+            }
+
+            button.favourite.favourited {
+                color: red;
+            }
+        }
     }
 
-    
+    .single-info-2 {
+        max-width: 24.5rem;
+        margin: 0 1.25rem 2rem;
+
+        h1 {
+            text-align: center;
+            font-size: clamp(2.25rem, 3vw, 5rem);
+        }
+
+        p {
+            font-size: clamp(1.25rem, 2vw, 1.875rem);
+            margin: 1rem 0;
+        }
+
+        .single-info-type {
+            font-weight: bold;
+            font-size: clamp(1.375rem, 2vw, 2.5rem)
+        }
+
+        #top-cast-border {
+            border-bottom: .0625rem solid #FFCB6A;
+            padding-bottom: 1.5rem;
+        }
+
+        #synopsis-info {
+            line-height: 1.4;
+        }
+
+
+    }
+
 }
 
-.title {
-    color: $text-color-light;
+@media (min-width: 50em) {
+    .single-movie-page {
+        flex-wrap: nowrap;
+        margin-top: 1.875rem;
+        justify-content: flex-start;
+
+        .single-info-1 {
+            margin-left: 2.5rem;
+
+            .single-rating-fav {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .single-info-2 {
+            margin: 2rem 2.5rem 0 0;
+            max-width: 100%;
+
+            h1 {
+                text-align: left;
+            }
+        }
+    }
 }

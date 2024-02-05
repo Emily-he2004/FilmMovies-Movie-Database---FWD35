@@ -17,11 +17,6 @@ function Header() {
         </Link>
         <button onClick={() => { setShowNav(!showNav) }} className="hamburger">☰</button>
       </div>
-      <SearchBar
-      // searchMovie={searchMovie}
-      // setSearchMovie={setSearchMovie}
-      // fetchMovieData={fetchMovieData}
-      />
       <NavBar />
     </header>
   );
