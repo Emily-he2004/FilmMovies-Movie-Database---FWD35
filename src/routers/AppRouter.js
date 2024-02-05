@@ -34,7 +34,7 @@ function AppRouter() {
           <Route path="/movie/:id" element={<SingleMoviePage />} />
 
           {/* <SearchBar /> */}
-          {/* <Route path="/search-results" element={<SearchResultPage />} /> */}
+          <Route path="/search-results" element={<SearchResultPage />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
 
           <Route path="/workshop" element={<WorkShop />} />

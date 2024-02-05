@@ -1,5 +1,5 @@
 import MovieCard from "./MovieCard";
-import "../sass/_home.scss";
+import "../sass/_moviesContainer.scss";
 
 function MoviesContainer({ title, moviesData }) {
   return (

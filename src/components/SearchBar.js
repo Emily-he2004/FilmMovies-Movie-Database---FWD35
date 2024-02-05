@@ -1,30 +1,30 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function SearchBar( searchMovie, setSearchMovie, fetchMovieData) {
+function SearchBar() {
+  const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const userValue = e.target[0].value;
+    console.log(userValue)
+    setSearchInput(userValue);
+    navigate(`/search-results?query=${userValue}`);
+  }
+
   return (
     <div>
       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search movies..."
-          value={searchMovie}
-          onChange={(e) => setSearchMovie(e.target.value)}
-          className="search-bar"
-        />
+        <form action="/search" method="GET" onSubmit={handleSubmit} >
+          <input />
+          <button type="submit" className="search-button">
+            Search
+          </button>
+        </form>
       </div>
-      <button 
-      onClick={fetchMovieData}
-      className="search-button">Search</button>
     </div>
   );
 }
-
-// const SearchBar = (props) => {
-//   return (
-//     <div>
-//       <h1>{props.heading}</h1>
-//     </div>
-//   );
-// };
 
 export default SearchBar;

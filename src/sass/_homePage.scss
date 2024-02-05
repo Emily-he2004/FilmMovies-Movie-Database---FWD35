@@ -1,0 +1,106 @@
+//Partial File: Home Page 
+//styling for: HomePage.js
+
+//---------------------------------------------------//
+//HomePage.js styles
+@use 'variables' as *;
+
+@import 'movieCard';
+@import 'moviesContainer';
+
+// we need a new file for universal styles
+body {
+    background-color: $body-color;
+    color: $text-color-light;
+
+}
+
+
+
+// home specific below onwards
+.home-page {
+    // don't need this any more due to body being grey
+    // background-color: $body-color;
+
+    ul {
+        list-style-type: none;
+    }
+
+
+    h2 {
+        color: $text-color-light;
+        text-align: center;
+    }
+
+}
+
+
+.movieCategories ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.25rem 8.125rem 8.125rem 1.25rem;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    justify-content: center;
+
+    .filter-popular,
+    .filter-now-playing {
+        grid-column: 2/3;
+    }
+
+    .filter-top-rated,
+    .filter-upcoming {
+        grid-column: 3/4;
+    }
+}
+
+.filterBtn {
+    width: 8.125rem;
+    height: 1.875rem;
+    border-color: $text-color-yellow;
+    background-color: $body-color;
+    border-radius: .3125rem;
+    color: $text-color-light;
+}
+
+.filterBtn:hover,
+.filterBtn:active,
+.filterBtn:focus {
+    color: red;
+}
+
+@media (min-width: 37.5em) {
+    .movieCategories ul {
+        display: flex;
+    }
+}
+
+@media (min-width: 50em) {
+    .movieCategories ul {
+        gap: 0 1.0625rem;
+    }
+
+    .filterBtn {
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: .625rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 90em) {
+    .movieCategories ul {
+        gap: 0 1.5625rem;
+    }
+
+    .filterBtn {
+        width: 12.5rem;
+        height: 3.125rem;
+        border-radius: .9375rem;
+        font-size: 1.5625rem;
+    }
+}
+
+
+
+

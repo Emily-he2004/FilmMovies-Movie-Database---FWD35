@@ -2,14 +2,23 @@
 
 @use 'variables' as *;
 
+@import 'moviecard';
+@import 'moviesContainer';
+
+
 .favPage {
     background-color: $body-color;
     min-height: 100vh;
     margin-top: 0;
     padding-top: 1rem;
+
+    h2 {
+        margin: 2rem;
+    }
    
     p,
     h2 {
         color: $text-color-light;
+        text-align: center;
     }
 }

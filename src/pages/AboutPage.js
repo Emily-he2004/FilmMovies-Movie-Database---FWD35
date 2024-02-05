@@ -1,15 +1,15 @@
-import "../sass/_about.scss";
-import popcorn from "../media/movie-watchers.jpg";
+import "../sass/_aboutPage.scss";
+import popcorn from "../media/popcorn.jpg";
 
 function AboutPage() {
   return (
-    <div className="about"> 
-      <img class="popcorn-cinema" src={popcorn} alt="eat popcorn at cinema" />
-      
-      <p class="about-text">Here at F<mark>Movies</mark>, we strive to become the largest movie database so that you won't ever need to search elsewhere.</p>
+    <div className="about">
+      <img className="popcorn-cinema" src={popcorn} alt="eat popcorn at cinema" />
+      <div className="about-content">
+        <p>Here at F<mark>Movies</mark>, we strive to become the largest movie database so that you won't ever need to search elsewhere.</p>
 
-      <p class="tmdb-text">This website uses TMDB API but is not endorsed nor certified by TMDB</p>
-
+        <p>This website uses TMDB API but is not endorsed nor certified by TMDB</p>
+      </div>
     </div>
   );
 }
