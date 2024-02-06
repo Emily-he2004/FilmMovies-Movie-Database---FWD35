@@ -13,7 +13,8 @@ function Header() {
     <header id="navigation-wrapper" className={`${showNav ? "show" : ""}`}>
       <div className="header-container">
         <Link className="movie-logo" to="/">
-          <img src={movieMiniLogo} alt="Movie Logo" />
+          <img className="header-mini-logo" src={movieMiniLogo} alt="Mini Movie Logo" />
+          <img className="header-full-logo" src={movieFullLogo} alt="Full Movie Logo" />
         </Link>
         <button onClick={() => { setShowNav(!showNav) }} className="hamburger">☰</button>
       </div>

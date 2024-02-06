@@ -4,34 +4,35 @@ import facebook from "../media/facebook.svg";
 import twitter from "../media/twitter.svg";
 import instagram from "../media/instagram.svg";
 import movieMiniLogo from "../media/movie_mini_logo.svg";
+import movieFullLogo from "../media/movie_full_logo.svg";
 
 function Footer() {
   return (
     <div className="footer">
-      
+
       <div className="footer-links">
         <ul>
           <li>
             {/*<Link to="/about">About</Link>*/}
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <img src={facebook} 
-                   alt="Facebook icon"/>
+              <img src={facebook}
+                alt="Facebook icon" />
             </a>
           </li>
 
           <li>
             {/*<Link to="/favourites">Favourites</Link>*/}
             <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener noreferrer">
-              <img src={twitter} 
-                   alt="Twitter icon"/>
+              <img src={twitter}
+                alt="Twitter icon" />
             </a>
           </li>
 
           <li>
             {/*<Link to="/favourites">Favourites</Link>*/}
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <img src={instagram} 
-                   alt="Instagram icon"/>
+              <img src={instagram}
+                alt="Instagram icon" />
             </a>
           </li>
         </ul>
@@ -46,7 +47,8 @@ function Footer() {
             // Links to "HomePage" <Route />
             // Need to only show ONE of 2 logos depending on screen size.
           /> */}
-          <img className="mini-logo" src={movieMiniLogo} alt="Movie Logo" />
+          <img className="footer-mini-logo" src={movieMiniLogo} alt="Mini Movie Logo" />
+          <img className="footer-full-logo" src={movieFullLogo} alt="Full Movie Logo" />
         </Link>
       </div>
     </div>

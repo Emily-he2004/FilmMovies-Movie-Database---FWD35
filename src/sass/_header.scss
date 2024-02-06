@@ -11,8 +11,27 @@ header {
         justify-content: space-between;
         align-items: center;
 
-        .movie-logo {
-            margin-left: 1rem;
+        .header-mini-logo {
+            margin: 0.5rem 0 0.5rem 1rem;
+        }
+
+        .header-full-logo {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 62.5em) {
+    header {
+        .header-container {
+            .header-mini-logo {
+                display: none;
+            }
+
+            .header-full-logo {
+                display: block;
+                margin: 1rem 0 1rem 1.5rem;
+            }
         }
     }
 }
@@ -114,6 +133,10 @@ header.show nav {
                 a {
                     border-top: none;
                 }
+
+                a:hover {
+                    color: red;
+                }
             }
         }
     }
@@ -160,5 +183,7 @@ header.show nav {
     #navigation-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
     }
 }
