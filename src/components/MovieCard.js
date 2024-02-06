@@ -1,4 +1,3 @@
-import React from "react";
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { useNavigate } from "react-router-dom";
 import { formatReleaseDate, truncateText, convertToHoursAndMinutes } from "../utilities/toolbelt";
