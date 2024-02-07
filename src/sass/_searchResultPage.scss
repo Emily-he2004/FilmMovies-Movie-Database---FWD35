@@ -29,5 +29,14 @@
 
     .no-movies {
         padding: 0 2rem 2rem 2rem;
+        height: 47vh;
+    }
+}
+
+@media (min-width: 37.5em) {
+    .search-result {
+        .no-movies {
+            height: 55vh;
+        }
     }
 }
