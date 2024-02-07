@@ -9,6 +9,7 @@ import {
 } from "../utilities/api";
 import MovieFilter from "../components/MovieFilter";
 import MoviesContainer from "../components/MoviesContainer";
+import MovieSlider from "../components/MovieSlider";
 
 function HomePage() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -60,6 +61,7 @@ function HomePage() {
 
   return (
     <main className="home-page" id="home-page">
+      <MovieSlider moviesData={popularMovies} />
       {/*<h2>This is the Home Page.</h2>*/}
       <MovieFilter filter={filter} setFilter={setFilter}/>
       {filter === "popular" && (
