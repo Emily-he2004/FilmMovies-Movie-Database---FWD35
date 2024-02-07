@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function NavBar() {
   return (
@@ -34,6 +35,7 @@ function NavBar() {
     // </div>
     <nav className="header-nav">
       <ul>
+        <SearchBar />
         <li><Link to="/about">About</Link></li>
         <li><Link to="/favourites">Favourites</Link></li>
       </ul>

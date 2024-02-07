@@ -15,10 +15,13 @@
     h2 {
         margin: 2rem;
     }
-   
+
     p,
     h2 {
         color: $text-color-light;
-        text-align: center;
     }
+}
+
+.favourite-page {
+    text-align: center;
 }

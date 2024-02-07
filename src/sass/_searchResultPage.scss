@@ -6,3 +6,28 @@
 @import 'moviesContainer';
 
 
+.search-result {
+    font-size: clamp(1.25rem, 1vw, 2.5rem);
+
+    h2 {
+        padding: 1rem 2rem;
+    }
+
+    .search-value h3,
+    .search-value p {
+        padding: 0 2rem;
+    }
+
+    .search-value p {
+        margin-bottom: 3rem;
+    }
+
+    .search-value span {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .no-movies {
+        padding: 0 2rem 2rem 2rem;
+    }
+}

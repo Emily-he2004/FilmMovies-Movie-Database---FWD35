@@ -1,8 +1,11 @@
 // import { useEffect, useState } from "react";
 
+import SearchBar from "./SearchBar";
+
 function MovieFilter({ filter, setFilter }) {
   return (
     <div className="movieCategories">
+      <SearchBar />
       <ul>
         <li className="filter-popular">
           <button className="filterBtn" onClick={() => setFilter("popular")}>Popular</button>

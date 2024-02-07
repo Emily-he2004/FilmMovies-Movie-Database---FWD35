@@ -45,38 +45,43 @@ function SingleMoviePage() {
     <article className="single-movie-page">
       {movieData && (
         <>
-          {movieVideos.length > 0 && (
-            <iframe
-              src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-              title={movieData.name}
-            ></iframe>
-          )}
-          <img
-            src={`https://image.tmdb.org/t/p/w500${posterPath}`}
-            alt={movieData.title}
-          />
-          <div>
-            <p>{(movieData.vote_average * 10).toFixed()}%</p>
-            <FavouriteButton movieData={movieData} />
-          </div>
-          <h1>{movieData.title}</h1>
-          <p><span>Genres: </span>{movieData.genres.map((genre, index) => (
-            <span key={genre.id}>
-              {genre.name}
-              {index < movieData.genres.length - 1 && ", "}
-            </span>
-          ))}</p>
-          <p><span>Director: </span>{director}</p>
-          <p><span>Released: </span>{formatReleaseDate(movieData.release_date)}</p>
+          <section className="single-info-1">
+            {movieVideos.length > 0 && (
+              <iframe
+                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                title={movieData.name}
+              ></iframe>
+            )}
+            <img
+              className="single-poster"
+              src={`https://image.tmdb.org/t/p/w500${posterPath}`}
+              alt={movieData.title}
+            />
+            <div className="single-rating-fav">
+              <p>{(movieData.vote_average * 10).toFixed()}%</p>
+              <FavouriteButton movieData={movieData} />
+            </div>
+          </section>
+          <section className="single-info-2">
+            <h1>{movieData.title}</h1>
+            <p><span className="single-info-type">Genres: </span>{movieData.genres.map((genre, index) => (
+              <span key={genre.id}>
+                {genre.name}
+                {index < movieData.genres.length - 1 && ", "}
+              </span>
+            ))}</p>
+            <p><span className="single-info-type">Director: </span>{director}</p>
+            <p><span className="single-info-type">Released: </span>{formatReleaseDate(movieData.release_date)}</p>
 
-          <p><span>Top Cast: </span>{topCast.map((actor, index) => (
-            <span key={actor.id}>
-              {actor.name}
-              {index < topCast.length - 1 && ", "}
-            </span>
-          ))}
-          </p>
-          <p><span>Synopsis: </span>{movieData.overview}</p>
+            <p id="top-cast-border"><span className="single-info-type">Top Cast: </span>{topCast.map((actor, index) => (
+              <span key={actor.id}>
+                {actor.name}
+                {index < topCast.length - 1 && ", "}
+              </span>
+            ))}
+            </p>
+            <p id="synopsis-info"><span className="single-info-type">Synopsis: </span>{movieData.overview}</p>
+          </section>
         </>
       )}
     </article>

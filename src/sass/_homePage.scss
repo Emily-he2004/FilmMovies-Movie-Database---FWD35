@@ -67,7 +67,9 @@ body {
 .filterBtn:active,
 .filterBtn:focus {
     color: red;
+    cursor: pointer;
 }
+
 
 @media (min-width: 37.5em) {
     .movieCategories ul {
@@ -100,7 +102,3 @@ body {
         font-size: 1.5625rem;
     }
 }
-
-
-
-

@@ -8,6 +8,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 5.5rem 1.25rem;
+    margin-bottom: 6rem;
 }
 
 .favourited {
@@ -83,12 +84,16 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
 
     button.favourite {
         background: none;
         border: none;
         font-size: 2.5rem;
         color: white;
+        cursor: pointer;
     }
 
     button.favourite.favourited {
