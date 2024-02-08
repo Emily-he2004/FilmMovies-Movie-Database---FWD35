@@ -63,6 +63,12 @@ function SingleMoviePage() {
             </div>
           </section>
           <section className="single-info-2">
+            {movieVideos.length > 0 && (
+              <iframe
+                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                title={movieData.name}
+              ></iframe>
+            )}
             <h1>{movieData.title}</h1>
             <p><span className="single-info-type">Genres: </span>{movieData.genres.map((genre, index) => (
               <span key={genre.id}>
