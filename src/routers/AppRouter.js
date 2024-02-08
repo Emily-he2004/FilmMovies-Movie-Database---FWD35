@@ -22,10 +22,6 @@ function AppRouter() {
     <BrowserRouter>
       <GlobalProvider>
         <Header />
-        {/* <SearchResultPage
-        // allMovieData={allMovieData}
-        // loading={loading}
-        /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -33,7 +29,6 @@ function AppRouter() {
 
           <Route path="/movie/:id" element={<SingleMoviePage />} />
 
-          {/* <SearchBar /> */}
           <Route path="/search-results" element={<SearchResultPage />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
 

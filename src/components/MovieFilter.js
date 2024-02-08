@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react";
-
 import SearchBar from "./SearchBar";
 
 function MovieFilter({ filter, setFilter }) {

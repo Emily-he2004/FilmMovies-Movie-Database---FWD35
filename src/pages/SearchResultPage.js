@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
-import SearchBar from "../components/SearchBar";
 import { getMovieRequest } from "../utilities/api";
 import MoviesContainer from "../components/MoviesContainer";
 import { useLocation } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
 function SearchResultPage() {
   const [allMovieData, setAllMovieData] = useState([]);
@@ -29,6 +29,7 @@ function SearchResultPage() {
 
   return (
     <div className="search-result">
+      <SearchBar />
       <h2>This is the Search Results Page.</h2>
       <div className="search-value">
         <p>Search Results for: <span>{query}</span></p>
