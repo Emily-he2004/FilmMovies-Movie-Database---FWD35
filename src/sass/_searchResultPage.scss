@@ -7,6 +7,32 @@
 
 
 .search-result {
+    .search-container {
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+
+        input {
+            background-color: #131313;
+            border: 1px solid white;
+            border-radius: .3125rem;
+            padding: 0.25rem 0.5rem;
+            width: 14.0625rem;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+
+            svg {
+                fill: white;
+                vertical-align: middle;
+            }
+        }
+    }
+
     font-size: clamp(1.25rem, 1vw, 2.5rem);
 
     h2 {
@@ -37,6 +63,20 @@
     .search-result {
         .no-movies {
             height: 55vh;
+        }
+
+        .search-container {
+            input {
+                width: 25rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 50em) {
+    .search-result {
+        .search-container {
+            display: none;
         }
     }
 }
