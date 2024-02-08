@@ -70,12 +70,16 @@ function SingleMoviePage() {
               ></iframe>
             )}
             <h1>{movieData.title}</h1>
-            <p><span className="single-info-type">Genres: </span>{movieData.genres.map((genre, index) => (
-              <span key={genre.id}>
-                {genre.name}
-                {index < movieData.genres.length - 1 && ", "}
-              </span>
-            ))}</p>
+            <p><span className="single-info-type">Genres: </span>
+              {movieData.genres.slice(0, 3).map((genre, index) => (
+                <span key={genre.id}>
+                  {genre.name}
+                  {index < 2 && ", "}
+                </span>
+              ))}
+              {movieData.genres.length > 3}
+            </p>
+
             <p><span className="single-info-type">Director: </span>{director}</p>
             <p><span className="single-info-type">Released: </span>{formatReleaseDate(movieData.release_date)}</p>
 
