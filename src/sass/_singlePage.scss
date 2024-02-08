@@ -136,43 +136,56 @@
             }
         }
     }
+}
 
-    @media (min-width: 75em) {
-        .single-movie-page {
+@media (min-width: 75em) {
+    .single-movie-page {
 
-            .single-info-2 {
-                position: relative;
-                max-width: 65%;
+        .single-info-2 {
+            position: relative;
+            max-width: 65%;
 
-                iframe {
-                    position: absolute;
-                    top: 0;
-                    right: 2rem;
-                    width: 21.875rem;
-                }
+            h1 {
+                max-width: 30rem;
+            }
+
+            iframe {
+                position: absolute;
+                top: 0;
+                right: 2rem;
+                width: 21.875rem;
+                height: 18vh;
             }
         }
     }
+}
 
-    @media (min-width: 87.5em) {
-        .single-movie-page {
-            .single-info-2 {
-                iframe {
-                    width: 25rem;
-                    height: 25vh;
-                }
+@media (min-width: 87.5rem) {
+    .single-movie-page {
+        .single-info-2 {
+            h1 {
+                max-width: 35rem;
+            }
+
+            iframe {
+                width: 23.4375rem;
+                height: 20vh;
             }
         }
     }
+}
 
-    @media (min-width: 87.5em) {
-        .single-movie-page {
-            .single-info-2 {
-                iframe {
-                    width: 28.125rem;
-                }
+@media (min-width: 109.375em) {
+    .single-movie-page {
+        .single-info-2 {
+            h1 {
+                max-width: 40rem;
+            }
+
+            iframe {
+                width: 25rem;
+                height: 22.5vh;
             }
         }
     }
-
 }
