@@ -8,7 +8,7 @@ STYLING FOR: Carousel
 
 .slider-container {
     width: 100%;
-    height: 50vh;
+    // height: 50vh; - this vh was what was messing up the border to movie alignment
     //margin-top: 1rem;
     margin-bottom: 7rem;
     border-bottom: 0.10rem solid $text-color-yellow;
@@ -19,12 +19,12 @@ STYLING FOR: Carousel
 .slide img {
     width: 100%;
     height: 50vh;
-  
+    // may need the vh above to prevent poster warping
 }
   
 .slide {
     width: 100%;
-    height: 49vh;
+    // height: 49vh;  don't need this
     filter: blur(0.15rem); //blurs inactive movie posters
     transform: scale(0.7);
     transition: 0.5s;
@@ -45,24 +45,24 @@ STYLING FOR: Arrows
 }
   
 .arrow {
-    padding: 0.3rem 0.93rem;
-    border-radius: 0.62rem;
-    box-shadow: 0 0 0.3rem 0.18rem #ccc;
+    padding: 0 0 0 .7rem;
+    // border-radius: 0.6rem;
+    // box-shadow: 0 0 0.3rem 0.18rem #ccc;
     display: flex;
-    width: 3.12rem;
+    width: 4.5rem;
     position: absolute;
-    top: 12.5rem;
+    top: 50%;
     z-index: 100;
     cursor: pointer;
 }
   
 .arrow-right {
-    right: 1.25rem;
+    right: 0;
       
 }
   
 .arrow-left {
-    left: 1.25rem;
+    left: 0;
 }
   
   
