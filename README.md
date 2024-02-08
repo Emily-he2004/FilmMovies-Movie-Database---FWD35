@@ -1,5 +1,5 @@
 # FilmMovies Movie Database - FWD35
-A movie database built with React. APIs from IMDB and TMDB.
+A movie database built with React. APIs fromTMDB.
 
 <strong>Key Highlights:</strong><br>
 
