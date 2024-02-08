@@ -15,15 +15,18 @@ function MovieSlider({ moviesData }) {
   const settings = {
     //dots: true,
     className: "center",
-    centerMode: true, // centers current/middle movie poster
+    // centerMode: true, // centers current/middle movie poster
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
+    autoplay: true, 
+    autoplaySpeed: 5000, 
     beforeChange: (current, next) => setSlideIndex(next),
     nextArrow: <SliderArrows direction="right" />,
     prevArrow: <SliderArrows direction="left" />
   };
+  
 
   return (
     <div className="slider-container">
@@ -31,9 +34,10 @@ function MovieSlider({ moviesData }) {
         {moviesData.map((movie, index) => (
           <div key={movie.id} className={index === slideIndex ? "slide slide-active" : "slide"}>
             <img
-              src={`${IMAGE_URL_BASE}/w400${movie.poster_path}`}
+              src={`${IMAGE_URL_BASE}/original${movie.backdrop_path}`}
               alt={movie.title}
             />
+            <h1>Test Test Test Test</h1>
           </div>
         ))}
       </Slider>

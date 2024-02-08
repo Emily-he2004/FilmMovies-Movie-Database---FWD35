@@ -2,23 +2,6 @@
 
 @use 'variables' as *;
 
-// .single-movie-page {
-//     background-color: $body-color;
-//     min-height: 100vh;
-//     margin-top: 0;
-//     padding-top: 1rem;
-
-//     p,
-//     h2{
-//         color: $text-color-light;
-//     }
-
-
-// }
-
-// .title {
-//     color: $text-color-light;
-// }
 
 .single-movie-page {
     display: flex;
@@ -109,8 +92,8 @@
         flex-wrap: nowrap;
         margin-top: 1.875rem;
         justify-content: flex-start;
-        height: 80vh;
-        align-items: center;
+        // height: 80vh;
+        align-items: flex-start;
 
         .single-info-1 {
             margin-left: 2.5rem;

@@ -60,7 +60,7 @@ function MovieCard({ movieData = defaultMovieData }) {
             </p>
             <FavouriteButton movieData={movieData} />
           </div>
-          <p>{truncateText(movieData.overview, 125)}</p>
+          <p>{truncateText(movieData.overview, 85)}</p>
           <button
             onClick={() => {
               navigate(`/movie/${movieData.id}`);

@@ -8,7 +8,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 5.5rem 1.25rem;
-    margin-bottom: 6rem;
+    margin: 0 auto 6rem;
+    max-width: 93.75rem;
 }
 
 .favourited {
@@ -20,8 +21,8 @@
 }
 
 .movie-card {
-    // position: relative;
-    max-width: 20rem;
+    position: relative;
+    max-width: 15rem;
 
     div {
         position: relative;
@@ -33,18 +34,18 @@
     flex-wrap: wrap;
     font-size: 1.25rem;
     justify-content: center;
-    padding: 3rem 1.875rem;
+    padding: 2.5rem 1.875rem;
     border-radius: 1.25rem;
     border: .125rem solid #FFCB6A;
 
     div {
         display: flex;
         align-items: center;
-        gap: 0 6rem;
+        gap: 0 4rem;
     }
 
     .more-info {
-        font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+        font-size: 1.25rem;
         background-color: $body-color;
         border-color: #FFCB6A;
         color: white;
@@ -53,7 +54,7 @@
     }
 
     p {
-        font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+        font-size: 1.25rem;
     }
 }
 
