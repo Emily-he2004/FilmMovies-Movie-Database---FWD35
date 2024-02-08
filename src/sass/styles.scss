@@ -4,6 +4,7 @@
 
 //Resets and Defaults
 @use 'reset';
+@use 'variables' as *;
 
 
 //HTML Sections
@@ -16,4 +17,12 @@
 @use 'header';
 @use 'footer';
 
-
+// we need a new file for universal styles
+body {
+    background-color: $body-color;
+    color: $text-color-light;
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}

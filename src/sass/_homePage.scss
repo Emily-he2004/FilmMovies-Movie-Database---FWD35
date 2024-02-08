@@ -8,15 +8,7 @@
 @import 'movieCard';
 @import 'moviesContainer';
 
-// we need a new file for universal styles
-body {
-    background-color: $body-color;
-    color: $text-color-light;
-    
-}
-::-webkit-scrollbar {
-    display: none;
-}
+
 
 
 // home specific below onwards
