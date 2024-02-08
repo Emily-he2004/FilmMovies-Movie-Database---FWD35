@@ -17,7 +17,7 @@ function MovieSlider({ moviesData }) {
     className: "center",
     centerMode: true, // centers current/middle movie poster
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
     beforeChange: (current, next) => setSlideIndex(next),
