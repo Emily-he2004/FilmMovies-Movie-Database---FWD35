@@ -17,11 +17,14 @@
 @use 'header';
 @use 'footer';
 
-// we need a new file for universal styles
 body {
+    font-family: 'Andika', sans-serif;
     background-color: $body-color;
     color: $text-color-light;
     
+    p {
+    font-family: 'Oxygen', sans-serif;
+    }
 }
 ::-webkit-scrollbar {
     display: none;
