@@ -15,7 +15,7 @@ function MovieFilter({ filter, setFilter }) {
           <button className="filterBtn" onClick={() => setFilter("now_playing")}>Now Playing</button>
         </li>
         <li className="filter-upcoming">
-          <button className="filterBtn" onClick={() => setFilter("upcoming")}>UpComing</button>
+          <button className="filterBtn" onClick={() => setFilter("upcoming")}>Upcoming</button>
         </li>
       </ul>
     </div>

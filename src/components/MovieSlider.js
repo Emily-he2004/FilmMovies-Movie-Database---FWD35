@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,14 +13,12 @@ function MovieSlider({ moviesData }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const settings = {
-    //dots: true,
     className: "center",
-    // centerMode: true, // centers current/middle movie poster
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
-    autoplay: true, 
+    autoplay: true,
     autoplaySpeed: 5000, 
     beforeChange: (current, next) => setSlideIndex(next),
     nextArrow: <SliderArrows direction="right" />,
@@ -32,13 +30,15 @@ function MovieSlider({ moviesData }) {
     <div className="slider-container">
       <Slider {...settings}>
         {moviesData.map((movie, index) => (
-          <div key={movie.id} className={index === slideIndex ? "slide slide-active" : "slide"}>
-            <img
-              src={`${IMAGE_URL_BASE}/original${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-            <h1>Test Test Test Test</h1>
-          </div>
+          <Link key={movie.id} to={`/movie/${movie.id}`}>
+            <div className={index === slideIndex ? "slide slide-active" : "slide"}>
+              <img
+                src={`${IMAGE_URL_BASE}/original${movie.backdrop_path}`}
+                alt={movie.title}
+              />
+              <h1>{movie.title}</h1>
+            </div>
+          </Link>
         ))}
       </Slider>
     </div>

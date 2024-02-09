@@ -62,7 +62,7 @@ function getNowPlayingMovies() {
 }
 
 function getUpcomingMovies() {
-  return fetch(`${API_ENDPOINT}/movie/upcoming`, {
+  return fetch(`${API_ENDPOINT}/movie/upcoming?region=US`, {
     headers: {
       accept: "application/json",
       Authorization: `Bearer ${API_TOKEN}`,
