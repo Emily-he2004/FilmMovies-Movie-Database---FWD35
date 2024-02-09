@@ -5,6 +5,7 @@ import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavouriteButton";
 import "../sass/_singlePage.scss";
 import noPosterImage from "../media/no-poster.png";
+import noTrailerImage from "../media/test-trailer.png";
 
 function SingleMoviePage() {
   const params = useParams();
@@ -43,39 +44,57 @@ function SingleMoviePage() {
       {movieData && (
         <>
           <section className="single-info-1">
-            {movieVideos.length > 0 && (
+          {movieVideos.length > 0 ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+              title={movieData.name}
+              allowfullscreen
+            ></iframe>
+          ) : (
+            <img
+              className="no-single-poster-mobile"
+              src={noTrailerImage}
+              alt="No Trailer Available"
+            />
+          )}
+          {posterPath ? (
+            <img
+              className="single-poster"
+              src={`https://image.tmdb.org/t/p/w500${posterPath}`}
+              alt={movieData.title}
+            />
+          ) : (
+            <img
+              className="single-poster"
+              src={noPosterImage}
+              alt="No Poster Available"
+            />
+          )}
+          <div className="single-rating-fav">
+            <p>{(movieData.vote_average * 10).toFixed()}%</p>
+            <FavouriteButton movieData={movieData} />
+          </div>
+        </section>
+
+          <section className="single-info-2">
+            <div className="iframe-container">
+            {movieVideos.length > 0 ? (
               <iframe
                 src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
                 title={movieData.name}
+                allowfullscreen
               ></iframe>
-            )}
-            {posterPath ? (
-              <img
-                className="single-poster"
-                src={`https://image.tmdb.org/t/p/w500${posterPath}`}
-                alt={movieData.title}
-              />
+            
             ) : (
               <img
-                className="single-poster"
-                src={noPosterImage}
+                className="no-single-poster-desktop"
+                src={noTrailerImage}
                 alt="No Poster Available"
               />
             )}
-            <div className="single-rating-fav">
-              <p>{(movieData.vote_average * 10).toFixed()}%</p>
-              <FavouriteButton movieData={movieData} />
             </div>
-          </section>
-          <section className="single-info-2">
-            {movieVideos.length > 0 && (
-              <iframe
-                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-                title={movieData.name}
-              ></iframe>
-            )}
-            <h1>{movieData.title}</h1>
-            <p><span className="single-info-type">Genres: </span>
+            <h1 className="single-info-cap">{movieData.title}</h1>
+            <p className="single-info-cap"><span className="single-info-type">Genres: </span>
               {movieData.genres.slice(0, 3).map((genre, index) => (
                 <span key={genre.id}>
                   {genre.name}
@@ -85,8 +104,8 @@ function SingleMoviePage() {
               {movieData.genres.length > 3}
             </p>
 
-            <p><span className="single-info-type">Director: </span>{director}</p>
-            <p><span className="single-info-type">Released: </span>{formatReleaseDate(movieData.release_date)}</p>
+            <p className="single-info-cap"><span className="single-info-type">Director: </span>{director}</p>
+            <p className="single-info-cap"><span className="single-info-type">Released: </span>{formatReleaseDate(movieData.release_date)}</p>
 
             <p id="top-cast-border"><span className="single-info-type">Top Cast: </span>{topCast.map((actor, index) => (
               <span key={actor.id}>
