@@ -4,6 +4,7 @@ import { getMovieById, getMovieCredits, getTopCast } from "../utilities/api";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavouriteButton";
 import "../sass/_singlePage.scss";
+import noPosterImage from "../media/no-poster.png";
 
 function SingleMoviePage() {
   const params = useParams();
@@ -17,8 +18,6 @@ function SingleMoviePage() {
   useEffect(() => {
     getMovieById(id)
       .then((data) => {
-        console.log("Data", data);
-        console.log("safs", data.videos.results);
 
         const youtubeTrailerVideos = filterVideos(data.videos.results);
         setMovieData(data);
@@ -38,8 +37,6 @@ function SingleMoviePage() {
       });
   }, [id]);
 
-  console.log("movieData", movieData);
-  console.log("movieVideos", movieVideos);
 
   return (
     <article className="single-movie-page">
@@ -52,11 +49,19 @@ function SingleMoviePage() {
                 title={movieData.name}
               ></iframe>
             )}
-            <img
-              className="single-poster"
-              src={`https://image.tmdb.org/t/p/w500${posterPath}`}
-              alt={movieData.title}
-            />
+            {posterPath ? (
+              <img
+                className="single-poster"
+                src={`https://image.tmdb.org/t/p/w500${posterPath}`}
+                alt={movieData.title}
+              />
+            ) : (
+              <img
+                className="single-poster"
+                src={noPosterImage}
+                alt="No Poster Available"
+              />
+            )}
             <div className="single-rating-fav">
               <p>{(movieData.vote_average * 10).toFixed()}%</p>
               <FavouriteButton movieData={movieData} />
