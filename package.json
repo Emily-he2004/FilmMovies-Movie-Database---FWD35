@@ -1,5 +1,6 @@
 {
   "name": "movie_database_react_app",
+  "homepage": "fmovies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -15,11 +15,10 @@ import PageNotFound from "../pages/PageNotFound";
 import WorkShop from "../pages/WorkShop";
 // ---------------------- //
 import Footer from "../components/Footer";
-import SearchBar from "../components/SearchBar";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="fmovies">
       <GlobalProvider>
         <Header />
         <Routes>
