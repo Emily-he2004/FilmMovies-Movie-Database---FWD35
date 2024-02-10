@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/fmovies/static/css/main.aa195870.css",
+    "main.js": "/fmovies/static/js/main.1409f9ca.js",
+    "static/js/787.0ed28f1b.chunk.js": "/fmovies/static/js/787.0ed28f1b.chunk.js",
+    "static/media/popcorn.jpg": "/fmovies/static/media/popcorn.4b700f553fd2e3b3b52f.jpg",
+    "static/media/no-poster.png": "/fmovies/static/media/no-poster.4f50f5115ae0cdfd45f6.png",
+    "static/media/test-trailer.png": "/fmovies/static/media/test-trailer.0be7c8148bda953ddaaa.png",
+    "static/media/movie_full_logo.svg": "/fmovies/static/media/movie_full_logo.28dcd3ad2ced1f0893e167782a605863.svg",
+    "static/media/instagram.svg": "/fmovies/static/media/instagram.d6a83e38e89eb482aeb60363b479bc0e.svg",
+    "static/media/slick.svg": "/fmovies/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/fmovies/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/fmovies/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/fmovies/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/movie_mini_logo.svg": "/fmovies/static/media/movie_mini_logo.69a795303bccd8f7e47645c031ff029a.svg",
+    "static/media/facebook.svg": "/fmovies/static/media/facebook.6cd2210f86db743e477e3118c78bd96f.svg",
+    "index.html": "/fmovies/index.html",
+    "static/media/twitter.svg": "/fmovies/static/media/twitter.42774442d9d8105e45f99ffc99033992.svg",
+    "static/media/arrow-right.svg": "/fmovies/static/media/arrow-right.c8e4d76437c62cf2036a315f6cd30923.svg",
+    "static/media/arrow-left.svg": "/fmovies/static/media/arrow-left.dbd371ec34a2c0478428be1292005e25.svg",
+    "main.aa195870.css.map": "/fmovies/static/css/main.aa195870.css.map",
+    "main.1409f9ca.js.map": "/fmovies/static/js/main.1409f9ca.js.map",
+    "787.0ed28f1b.chunk.js.map": "/fmovies/static/js/787.0ed28f1b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa195870.css",
+    "static/js/main.1409f9ca.js"
+  ]
+}
