@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fmovies/static/css/main.aa195870.css",
-    "main.js": "/fmovies/static/js/main.1409f9ca.js",
+    "main.js": "/fmovies/static/js/main.b868bcaa.js",
     "static/js/787.0ed28f1b.chunk.js": "/fmovies/static/js/787.0ed28f1b.chunk.js",
     "static/media/popcorn.jpg": "/fmovies/static/media/popcorn.4b700f553fd2e3b3b52f.jpg",
     "static/media/no-poster.png": "/fmovies/static/media/no-poster.4f50f5115ae0cdfd45f6.png",
@@ -19,11 +19,11 @@
     "static/media/arrow-right.svg": "/fmovies/static/media/arrow-right.c8e4d76437c62cf2036a315f6cd30923.svg",
     "static/media/arrow-left.svg": "/fmovies/static/media/arrow-left.dbd371ec34a2c0478428be1292005e25.svg",
     "main.aa195870.css.map": "/fmovies/static/css/main.aa195870.css.map",
-    "main.1409f9ca.js.map": "/fmovies/static/js/main.1409f9ca.js.map",
+    "main.b868bcaa.js.map": "/fmovies/static/js/main.b868bcaa.js.map",
     "787.0ed28f1b.chunk.js.map": "/fmovies/static/js/787.0ed28f1b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa195870.css",
-    "static/js/main.1409f9ca.js"
+    "static/js/main.b868bcaa.js"
   ]
 }
