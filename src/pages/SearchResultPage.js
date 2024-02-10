@@ -30,9 +30,9 @@ function SearchResultPage() {
   return (
     <div className="search-result">
       <SearchBar />
-      <h2>This is the Search Results Page.</h2>
+      {/* <h2>This is the Search Results Page.</h2> */}
       <div className="search-value">
-        <p>Search Results for: <span>{query}</span></p>
+        <h2>Search Results for: <span>{query}</span></h2>
       </div>
       {isLoading ? (
         <p>Loading...</p>
